@@ -4,8 +4,6 @@ package main
 
 import "fmt"
 
-const MAXN = 100000 + 7
-
 func rtp(arr []int, N int) int {
 	var ThisSum, MaxSum int
 	for i := 0; i < N; i++ {
@@ -22,9 +20,9 @@ func rtp(arr []int, N int) int {
 
 func main() {
 	var n int
-	a := make([]int, MAXN)
 
 	fmt.Scanf("%d", &n)
+	a := make([]int, n)
 	for i := 0; i < n; i++ {
 		fmt.Scanf("%d", &a[i])
 	}

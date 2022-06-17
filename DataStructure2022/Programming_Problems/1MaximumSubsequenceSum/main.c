@@ -3,15 +3,16 @@
 
 #define MAX_N (100000 + 7)
 
+int n, a[MAX_N];
+
 /*
+divide and conquer
 T(N) = 2T(N^2) + c(n)
 =2[2T(N^2) + c(n)] + c(n)
 =2^k O(1) + ckN
 =O(NlogN)
 其中N/2^k = 1
 */
-
-// divide and conquer
 int DivideConquer(int data[], int left, int right) {
   int mid;
   int leftMaxSum, rightMaxSum;
@@ -45,25 +46,6 @@ int DivideConquer(int data[], int left, int right) {
   /* 治的过程，最大值为左边的最大值、右边最大值，跨越边界最大值之中的最大值 */
   return MAX(MAX(leftMaxSum, rightMaxSum), leftMaxBoardSum + rightMaxBoardSum);
 }
-
-/*
-在线处理，即时处理
-*/
-int MaxSubseqSum4(int A[], int N) {
-  int ThisSum, MaxSum;
-  int i;
-  ThisSum = MaxSum = 0;
-  for (i = 0; i < N; i++) {
-    ThisSum += A[i];       //向右累加
-    if (ThisSum > MaxSum)  //发现更大和则更新当前结果
-      MaxSum = ThisSum;
-    else if (ThisSum < 0)  //如果当前和小于0，则清零
-      ThisSum = 0;
-  }
-  return MaxSum;
-}
-
-int n, a[MAX_N];
 
 int main() {
   scanf("%d", &n);
