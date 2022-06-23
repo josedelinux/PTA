@@ -2,7 +2,10 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func rtp(arr []int, N int) int {
 	var ThisSum, MaxSum int
@@ -24,7 +27,10 @@ func main() {
 	fmt.Scanf("%d", &n)
 	a := make([]int, n)
 	for i := 0; i < n; i++ {
-		fmt.Scanf("%d", &a[i])
+		//fmt.Scanf("%d", &a[i])
+		//in := bufio.NewReader(os.Stdin)
+		//in.ReadString('\n')
+		fmt.Fscanf(os.Stdin, "%d", &a[i])
 	}
 	fmt.Println(rtp(a, n))
 }
