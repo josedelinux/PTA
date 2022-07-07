@@ -47,6 +47,7 @@ List Merge(List L1, List L2) {
   } else {
     P->Next = P2;
   }
+  // todo: free it
   L1->Next = NULL;
   L2->Next = NULL;
   return L;
